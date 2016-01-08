@@ -16,6 +16,7 @@ SET(ONION_USE_GC true CACHE BOOL "Compile Boehm GC examples")
 SET(ONION_USE_TESTS false CACHE BOOL "Compile the tests")
 SET(ONION_EXAMPLES true CACHE BOOL "Compile the examples")
 SET(ONION_USE_BINDINGS_CPP true CACHE BOOL "Compile the CPP bindings")
+SET(ONION_USE_BINDINGS_LUA true CACHE BOOL "Compile the Lua bindings")
 SET(ONION_POLLER default CACHE string "Default poller to use: default | epoll | libev | libevent")
 ########
 
@@ -184,6 +185,15 @@ if (${ONION_USE_SYSTEMD})
 	endif(SD_DAEMON_LIB)
 endif(${ONION_USE_SYSTEMD})
 
+if(${ONION_USE_BINDINGS_LUA})
+	find_package(Lua 5.3)
+	if(LUA_FOUND)
+		set(LUA_ENABLED true)
+		message(STATUS "Lua found. Lua bindings will be compiled.")
+	else(LUA_FOUND)
+		message("Lua not found. Lua bindings will not be compiled.")
+	endif(LUA_FOUND)
+endif(${ONION_USE_BINDINGS_LUA})
 
 # defines
 if (GNUTLS_ENABLED)
