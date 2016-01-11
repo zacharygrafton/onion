@@ -19,7 +19,7 @@ addons:
       - g++-5
       - gcc-5
       - libhiredis-dev
-      - liblua5.1-dev
+      - liblua5.1-0-dev
 
 install:
   # install some packages from Ubuntu's default sources
