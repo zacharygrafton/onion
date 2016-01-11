@@ -186,7 +186,7 @@ if (${ONION_USE_SYSTEMD})
 endif(${ONION_USE_SYSTEMD})
 
 if(${ONION_USE_BINDINGS_LUA})
-	find_package(Lua 5.3)
+	find_package(Lua 5.1)
 	if(LUA_FOUND)
 		set(LUA_ENABLED true)
 		message(STATUS "Lua found. Lua bindings will be compiled.")

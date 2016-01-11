@@ -19,6 +19,7 @@ addons:
       - g++-5
       - gcc-5
       - libhiredis-dev
+      - liblua5.1-dev
 
 install:
   # install some packages from Ubuntu's default sources
@@ -32,6 +33,7 @@ script:
     && cmake ..
        -DCMAKE_C_FLAGS="-Werror"
        -DCMAKE_CXX_FLAGS="-Werror"
+       -DLUA_BINDINGS_INSTALL_DIR=/usr/lib/x86_64-linux-gnu/lua/5.1
     && make VERBOSE=1
     && (make test || true)
 
