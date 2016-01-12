@@ -27,6 +27,8 @@ static const luaL_Reg lua_onion_handler_funcs[] =
 
 static const luaL_Reg lua_onion_handler_methods[] =
 {
+	{"__gc", lua_onion_handler_free},
+	{"add", lua_onion_handler_add},
 	{NULL, NULL}
 };
 
