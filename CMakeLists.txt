@@ -20,7 +20,7 @@ SET(ONION_USE_BINDINGS_LUA true CACHE BOOL "Compile the Lua bindings")
 SET(ONION_POLLER default CACHE string "Default poller to use: default | epoll | libev | libevent")
 ########
 
-set(CMAKE_MODULE_DIR ${CMAKE_MODULE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules)
+set(CMAKE_MODULE_DIR ${CMAKE_MODULE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Modules")
 
 execute_process(
 	COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/git-version-gen" "${CMAKE_CURRENT_SOURCE_DIR}"

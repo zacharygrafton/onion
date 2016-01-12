@@ -1,4 +1,4 @@
-include_directories(${LUA_INCLUDE_DIRS})
+include_directories(${LUA_INCLUDE_DIR} ${PROJECT_SOURCE_DIR}/src)
 
 add_library(onion_lua SHARED
 	main.c
