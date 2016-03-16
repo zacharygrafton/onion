@@ -56,7 +56,7 @@ int connect_to(const char *addr, const char *port){
 }
 
 static void shutdown_server(int _){
-	if (o) 
+	if (o)
 		onion_listen_stop(o);
 }
 
@@ -100,7 +100,7 @@ void t02_stop_listening_some_petitions(){
 	
 	signal(SIGTERM, shutdown_server);
 	
-	o=onion_new(O_POOL);
+	o=onion_new(O_POOL | O_NO_SIGTERM);
 	
 	pthread_t th;
 	
